@@ -4,8 +4,6 @@ import (
 	"context"
 	"fmt"
 	"log"
-
-	"github.com/K0kubun/pp"
 )
 
 // Thyella provide purge
@@ -15,10 +13,10 @@ type Thyella struct {
 }
 
 // Purge purge nodes.
-func (p Thyella) Purge(cluster string, nps []string) error {
+func (p Thyella) Purge(cluster string, nodePools []string) error {
 	ctx := context.Background()
 
-	if len(nps) == 0 {
+	if len(nodePools) == 0 {
 		return nil
 	}
 
@@ -39,7 +37,7 @@ func (p Thyella) Purge(cluster string, nps []string) error {
 		nodeEachPools[n.NodePool] = n
 	}
 
-	n, ok, err := p.purgeInGroup(ctx, cluster, nps, nodes, nodeEachPools)
+	n, ok, err := p.purgeInGroup(ctx, cluster, nodePools, nodes, nodeEachPools)
 	if err != nil {
 		return err
 	}
