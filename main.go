@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/kelseyhightower/envconfig"
-	"github.com/takashabe/thyella/thyella"
+	"github.com/na-ga/thyella/thyella"
 )
 
 type Env struct {

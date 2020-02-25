@@ -1,4 +1,4 @@
-module github.com/takashabe/thyella
+module github.com/na-ga/thyella
 
 go 1.13
 
